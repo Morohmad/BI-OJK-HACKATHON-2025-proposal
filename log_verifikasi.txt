@@ -1,0 +1,3 @@
+2025-08-01 19:50:30 | Nama: - | Status: GAGAL
+2025-08-01 19:51:22 | Nama: database | Status: TERVERIFIKASI
+2025-08-01 20:07:18 | Nama: foto_1 | Status: TERVERIFIKASI
