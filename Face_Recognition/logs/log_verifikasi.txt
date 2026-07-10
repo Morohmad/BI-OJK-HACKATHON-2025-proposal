@@ -1,0 +1,5 @@
+2026-07-10 12:04:30 | Name: Milo_Maestrecampo_0003 | Status: VERIFIED | Distance: 0.3850375608602211
+2026-07-10 13:02:04 | Name: Milo_Maestrecampo | Status: VERIFIED | Distance: 0.39659094190326205
+2026-07-10 13:05:29 | Name: - | Status: FAILED | Distance: 0.47597067514855285
+2026-07-10 13:16:17 | Name: - | Status: FAILED | Distance: 0.3688083966665936
+2026-07-10 13:22:14 | Name: - | Status: FAILED | Distance: 0.4125631948467947
