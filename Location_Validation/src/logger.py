@@ -1,7 +1,6 @@
 import os
 from datetime import datetime
-
-from config import LOG_DIR, LOG_FILE
+from .config import LOG_DIR, LOG_FILE
 
 
 class LocationLogger:

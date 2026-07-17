@@ -1,8 +1,8 @@
 import cv2
 
-from camera import Camera
-from verify import FaceVerifier
-from logger import VerificationLogger
+from .camera import Camera
+from .verify import FaceVerifier
+from .logger import VerificationLogger
 
 
 camera = Camera()

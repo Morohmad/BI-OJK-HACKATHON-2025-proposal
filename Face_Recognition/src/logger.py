@@ -1,5 +1,5 @@
-from utils import get_timestamp, ensure_directory
-from config import LOG_DIR, LOG_FILE
+from .utils import get_timestamp, ensure_directory
+from .config import LOG_DIR, LOG_FILE
 
 
 class VerificationLogger:

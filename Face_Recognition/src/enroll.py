@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 from deepface import DeepFace
 
-from config import (
+from .config import (
     DATABASE_PATH,
     EMBEDDING_DIR,
     EMBEDDING_FILE,

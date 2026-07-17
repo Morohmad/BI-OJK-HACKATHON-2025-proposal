@@ -1,5 +1,5 @@
 import cv2
-from config import CAMERA_INDEX
+from .config import CAMERA_INDEX
 
 
 class Camera:

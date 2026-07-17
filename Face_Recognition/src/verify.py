@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 from deepface import DeepFace
 
-from config import (
+from .config import (
     EMBEDDING_FILE,
     MODEL_NAME,
     DETECTOR_BACKEND,

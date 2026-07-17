@@ -1,7 +1,6 @@
 import json
 import math
-
-from config import DATA_FILE, MAX_DISTANCE
+from .config import DATA_FILE, MAX_DISTANCE
 
 
 class LocationValidator:

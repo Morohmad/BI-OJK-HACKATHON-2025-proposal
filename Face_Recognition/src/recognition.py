@@ -1,7 +1,7 @@
 import os
 from deepface import DeepFace
 
-from config import (
+from .config import (
     DATABASE_PATH,
     MODEL_NAME,
     DETECTOR_BACKEND,

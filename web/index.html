@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SATUKAN | Autentikasi Bansos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">SATUKAN</span>
+        <p class="brand-text">Sistem Autentikasi Terpadu Penyaluran Bansos</p>
+      </div>
+      <nav class="nav-links">
+        <a href="#face-section">Verifikasi Wajah</a>
+        <a href="#location-section">Validasi Lokasi</a>
+        <a href="#audit-section">Riwayat Aktivitas</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-copy">
+          <span class="eyebrow">Panel Verifikasi Lapangan</span>
+          <h1>Penyaluran Bantuan Sosial Lebih Tepat Sasaran</h1>
+          <p>Validasi identitas KPM (Keluarga Penerima Manfaat) secara real-time menggunakan pencocokan wajah dan lokasi geografis posko.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#face-section">Mulai Verifikasi</a>
+            <a class="btn btn-secondary" href="#location-section">Cek Lokasi Posko</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <h2>Prasyarat Sistem</h2>
+            <ul>
+              <li><strong>Akses Kamera:</strong> Digunakan untuk mencocokkan wajah KPM.</li>
+              <li><strong>GPS Browser:</strong> Digunakan untuk memastikan posisi di area posko.</li>
+              <li><strong>Log Audit:</strong> Mencatat otomatis setiap riwayat pemeriksaan.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="face-section" class="feature-section">
+        <div class="section-heading">
+          <span class="section-label">01</span>
+          <div>
+            <h2>Verifikasi Wajah</h2>
+            <p>Ambil foto wajah penerima manfaat untuk dicocokkan dengan database pusat.</p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <div class="card card-panel">
+            <h3>Kamera Langsung</h3>
+            <div class="camera-frame" id="cameraFrame">
+              <video id="previewVideo" autoplay muted playsinline></video>
+              <div class="camera-overlay" id="cameraOverlay">Kamera belum aktif. Klik tombol di bawah untuk memulai.</div>
+            </div>
+            <div class="camera-actions">
+              <button id="startCameraBtn" class="btn btn-primary">Aktifkan Kamera</button>
+              <button id="verifyFaceBtn" class="btn btn-secondary" disabled>Ambil & Verifikasi</button>
+              <button id="refresh-camera-btn" class="btn btn-secondary" style="display: none;">Ulangi Kamera</button>
+            </div>
+          </div>
+
+          <div class="card card-panel result-panel">
+            <h3>Hasil Pemindaian</h3>
+            <div class="result-item">
+              <span>Nama Terdaftar</span>
+              <strong id="faceResultName">-</strong>
+            </div>
+            <div class="result-item">
+              <span>Status Identitas</span>
+              <strong id="faceResultStatus">Menunggu Tindakan</strong>
+            </div>
+            <div class="result-item">
+              <span>Skor Kecocokan</span>
+              <strong id="faceResultConfidence">-</strong>
+            </div>
+            <div class="result-item">
+              <span>Catatan Petugas</span>
+              <p id="faceResultNote">Silakan aktifkan kamera terlebih dahulu untuk memproses data wajah.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="location-section" class="feature-section accent-section">
+        <div class="section-heading">
+          <span class="section-label">02</span>
+          <div>
+            <h2>Validasi Lokasi Posko</h2>
+            <p>Pastikan proses penyaluran bansos dilakukan di titik koordinat yang telah ditentukan.</p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <div class="card card-panel">
+            <h3>Koordinat GPS</h3>
+            <div class="location-info">
+              <div class="location-row"><span>Garis Lintang (Lat)</span><strong id="latitude">-</strong></div>
+              <div class="location-row"><span>Garis Bujur (Lon)</span><strong id="longitude">-</strong></div>
+              <div class="location-row"><span>Nama Titik Distribusi</span><strong id="pointName">-</strong></div>
+              <div class="location-row"><span>Jarak ke Posko</span><strong id="distance">-</strong></div>
+            </div>
+            <button id="validateLocationBtn" class="btn btn-primary" style="margin-top: 18px; width: 100%;">Periksa Radius Lokasi</button>
+          </div>
+
+          <div class="card card-panel result-panel">
+            <h3>Hasil Geofencing</h3>
+            <div class="result-item">
+              <span>Status Zonasi</span>
+              <strong id="locationStatus">Menunggu Tindakan</strong>
+            </div>
+            <div class="result-item">
+              <span>Batas Radius Maksimal</span>
+              <strong id="maxDistanceLabel">-</strong>
+            </div>
+            <div class="result-item">
+              <span>Pesan Sistem</span>
+              <p id="locationNote">Klik tombol Periksa Radius untuk mengambil koordinat GPS perangkat saat ini.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="audit-section" class="feature-section">
+        <div class="section-heading">
+          <span class="section-label">03</span>
+          <div>
+            <h2>Riwayat Aktivitas (Audit Log)</h2>
+            <p>Daftar kronologis verifikasi wajah dan lokasi yang berhasil terekam oleh sistem.</p>
+          </div>
+        </div>
+
+        <div class="card audit-card">
+          <div id="auditLog" class="audit-list">
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>SATUKAN • Sistem Integrasi Autentikasi Lapangan Penyaluran Bantuan Sosial.</p>
+    </footer>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>
